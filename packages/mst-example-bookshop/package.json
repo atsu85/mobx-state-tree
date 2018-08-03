@@ -13,7 +13,7 @@
     "mobx-utils": "^2.0.1",
     "path-match": "^1.2.4",
     "react": "^15.5.0",
-    "react-dom": "^15.5.0",
+    "react-dom": "^16.0.1",
     "react-tabs": "^1.0.0",
     "react-test-renderer": "^15.5.0"
   },
