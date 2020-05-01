@@ -1,28 +1,32 @@
 {
-	"private": true,
-	"dependencies": {
-		"lerna": "^2.4.0",
-		"husky": "^0.13.4",
-		"prettier": "^1.4.4",
-		"lint-staged": "^3.6.1",
-		"cross-env":"^5.1.1"
-	},
-	"scripts": {
-		"clean": "lerna clean",
-		"build": "lerna run build",
-		"test": "cross-env CI=true lerna run test",
-		"precommit": "lint-staged",
-		"coverage": "lerna run coverage",
-		"bootstrap": "lerna bootstrap --hoist",
-		"release": "yarn build && lerna publish"
-	},
-	"workspaces": [
-		"packages/*"
-	],
-	"lint-staged": {
-		"*.{ts,tsx,js,jsx}": [
-			"prettier --write --print-width 100 --tab-width 4 --no-semi",
-			"git add"
-		]
-	}
+  "private": true,
+  "dependencies": {
+    "lerna": "^2.4.0",
+    "husky": "^0.13.4",
+    "prettier": "^1.4.4",
+    "lint-staged": "^3.6.1",
+    "cross-env": "^5.1.1",
+    "snyk": "^1.316.1"
+  },
+  "scripts": {
+    "clean": "lerna clean",
+    "build": "lerna run build",
+    "test": "cross-env CI=true lerna run test",
+    "precommit": "lint-staged",
+    "coverage": "lerna run coverage",
+    "bootstrap": "lerna bootstrap --hoist",
+    "release": "yarn build && lerna publish",
+    "snyk-protect": "snyk protect",
+    "prepare": "yarn run snyk-protect"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "lint-staged": {
+    "*.{ts,tsx,js,jsx}": [
+      "prettier --write --print-width 100 --tab-width 4 --no-semi",
+      "git add"
+    ]
+  },
+  "snyk": true
 }
